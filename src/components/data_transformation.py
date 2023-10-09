@@ -11,6 +11,8 @@ from src.utils import save_object
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 
+# from src.components.data_ingestion import DataIngestion
+# from src.components.model_trainer import ModelTrainer
 
 
 @dataclass
@@ -103,7 +105,7 @@ class DataTransformation:
             logging.info("Applying preprocessing object on train and test dataset ")
 
             # concatenating train and test array with there target features
-            train_arr=np.c_[input_feature_train_arr,np.array(target_feature_train_df)]
+            train_arr=np.c_[input_feature_train_arr,np.array(target_feature_train_df)]  
             test_arr=np.c_[input_feature_test_arr,np.array(target_feature_test_df)]
 
             save_object(
@@ -128,36 +130,17 @@ class DataTransformation:
 
 # checking it in data ingestion becz ingestion first after transformation
 
+# if __name__=="__main__":
+#     obj=DataIngestion()
+#     train_data_path,test_data_path=obj.initiate_data_ingestion()
+#     obj_data_transformation=DataTransformation()
+#     train_arr,test_arr,_=obj_data_transformation.initiate_data_transformation(train_data_path,test_data_path)
+#     obj_model_trainer=ModelTrainer()
+#     obj_model_trainer.initiate_model_training(train_arr,test_arr)
 
 
 
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 

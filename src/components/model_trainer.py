@@ -71,13 +71,6 @@ class ModelTrainer:
             raise CustomException(e,sys)
 
 
-if __name__=="__main__":
-    obj=DataIngestion()
-    train_data_path,test_data_path=obj.initiate_data_ingestion()
-    obj_data_transformation=DataTransformation()
-    train_arr,test_arr,_=obj_data_transformation.initiate_data_transformation(train_data_path,test_data_path)
-    obj_model_trainer=ModelTrainer()
-    obj_model_trainer.initiate_model_training(train_arr,test_arr)
 
 
 
